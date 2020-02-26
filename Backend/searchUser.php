@@ -15,6 +15,7 @@ if ($result->num_rows > 0) {
     //output data of each row
     while($row = $result->fetch_assoc()) {
       echo $row['user'];
+      echo $row['password'];
     if($user == $row['user'] || $pass == $row['password'])
     { 
       mysqli_close ($conn);
@@ -44,13 +45,14 @@ echo("Utente errato");
 
       <?php
 
-      if(checkUser($_GET["user"],$_GET["pass"])== true)
+      if(checkUser($_GET["user"],$_GET["password"])== true)
       {
+        echo ($_GET["user"].$_GET["password"]);
         echo'<div class="reg">
         <div class="form-group">
       <label for="exampleFormControlInput1">Accesso eseguito!</label>
       </div>
-          <form method="GET" action="signin.html">           
+          <form method="GET" action="http://localhost/informatica/5B%20IA/php/Es.4">           
                 <div class="col-auto my-1">
                   <button  class="btn btn-Danger"><- Back</button>
                 </div>
@@ -62,7 +64,7 @@ echo("Utente errato");
           <div class="form-group">
         <label for="exampleFormControlInput1">Utente non presente!</label>
         </div>
-            <form method="GET" action="signin.html">           
+            <form method="GET" action="http://localhost/informatica/5B%20IA/php/Es.4">           
                   <div class="col-auto my-1">
                     <button  class="btn btn-Danger"><- Back</button>
                   </div>
