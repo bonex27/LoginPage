@@ -1,34 +1,27 @@
 <?php
 function checkUser($user,$pass){ 
     //Dati accesso DB
-$servername = "127.0.0.1:8889";
-$username = "Bonex";
-$password = "123456";
+$servername = "127.0.0.1:3306";
+$username = "quintab";
+$password = "HA45@BMV";
 $db = "quintab_es.4";
 
 // Create connection  {"user":"bonex","pass":"123456"}
     	$conn = mysqli_connect($servername,$username,$password,$db) or die('Errore...');
-
-       $query = "SELECT user, password FROM login";
-       $result = mysql_query($query, $conn) or die('Errore...');
-       echo(mysql_num_rows($result));
-        //$result = $conn->query($sql);
+       $query = "SELECT * FROM utenti";
+       $result = mysqli_query($conn, $query);
 
 if ($result->num_rows > 0) {
     //output data of each row
-    echo $row['nome'];
     while($row = $result->fetch_assoc()) {
-    if($user == $row['nome'] || $pass == $row['password'])
-    {
-      echo  $row['nome'];
-      
+      echo $row['user'];
+    if($user == $row['user'] || $pass == $row['password'])
+    { 
       mysqli_close ($conn);
-    echo("Good");
      return true;
       }
     }
-}
-        
+}        
 else {
   mysqli_close ($conn);
     echo("Errore");
