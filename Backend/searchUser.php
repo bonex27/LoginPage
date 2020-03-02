@@ -24,12 +24,10 @@ if ($result->num_rows > 0) {
 }        
 else {
   mysqli_close ($conn);
-    echo("Errore");
   return false; 
         
 }
 mysqli_close ($conn);
-echo("Utente errato");
     return false;
 }
 ?>
@@ -46,8 +44,8 @@ echo("Utente errato");
 
       if(checkUser($_GET["user"],$_GET["password"])== true)
       {
-        echo'<div class="reg">
-        <div class="form-group">
+        echo'<div class="reg" style="text-align: center; margin-top: 10%; background-color: yellow; margin-left: 20%; margin-right: 20%;border-style: solid; border-radius: 20px;">
+        <div class="form-group" >
       <label for="exampleFormControlInput1">Accesso eseguito!</label>
       </div>
           <form method="GET" action="../Frontend/index.html">           
@@ -58,7 +56,7 @@ echo("Utente errato");
           </div>';
       }
       else{
-          echo'<div class="reg">
+          echo'<div class="reg" style="text-align: center; margin-top: 10%; background-color: yellow; margin-left: 20%; margin-right: 20%;border-style: solid; border-radius: 20px;">
           <div class="form-group">
         <label for="exampleFormControlInput1">Utente non presente!</label>
         </div>
