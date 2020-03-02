@@ -24,7 +24,7 @@ $_GET["password"] = md5($_GET["password"]);
     	$conn = mysqli_connect($servername,$username,$password,$db) or die( mysqli_connect_error());
        $query = "INSERT INTO `utenti` (`nome`, `cognome`, `email`, `pass`, `patA`, `patB`, `user`, `nazionalita`, `sesso`) VALUES ('".$_GET["nome"]."', '".$_GET["cognome"]."', '".$_GET["email"]."', '".$_GET["password"]."', '".$_GET["patA"]."', '".$_GET["patB"]."', '".$_GET["user"]."', '".$_GET["naz"]."', '".$_GET["sesso"]."')";
        mysqli_query($conn, $query) or die( mysqli_error($conn));
-       echo $query;
+       //echo $query;
 ?>
     
     <html>
